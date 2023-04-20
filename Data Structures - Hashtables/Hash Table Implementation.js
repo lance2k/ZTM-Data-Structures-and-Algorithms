@@ -17,6 +17,7 @@ class HashTable {
 			this.data[address] = [];
 		}
 		this.data[address].push([key, value]);
+		return this.data;
 	}
 
 	get(key) {
@@ -47,4 +48,5 @@ const myHashTable = new HashTable(50);
 myHashTable.set("grapes", 10000);
 myHashTable.set("apples", 54);
 myHashTable.set("orange", 2);
+console.log(myHashTable);
 console.log(myHashTable.keys());
