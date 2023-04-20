@@ -5,4 +5,7 @@ def reverse(str):
         reverseArr.append(str[i])
     return "".join(reverseArr)
 
+str = "I am lance"
+
 print(reverse("I am lance"))
+print(str[::-1])
