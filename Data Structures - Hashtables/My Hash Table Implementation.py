@@ -22,6 +22,7 @@ class HashTable:
     def set(self, key, value):
         # Get the hash value of the key
         address = self._hash(key)
+        # collision is handled using separate chaining
         # If the bucket at the hash address is empty, create a new list to hold the key-value pair
         if self.data[address] is None:
             self.data[address] = []

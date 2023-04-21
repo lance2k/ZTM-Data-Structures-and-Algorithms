@@ -17,5 +17,5 @@ def hashtable(mylist):
   
 
 mylist = [2,1,1,2,3,4,5]
-x = hashtable(mylist)
+x = func(mylist)
 print(x)
