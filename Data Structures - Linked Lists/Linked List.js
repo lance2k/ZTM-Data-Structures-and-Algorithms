@@ -25,6 +25,35 @@ class LinkedList {
 		this.length++;
 		return this;
 	}
+	insert(index, value) {
+		//Code here
+		if (index >= this.length) {
+			return this.append(value);
+		}
+		const newNode = new Node(value);
+		let currentNode = this.traverseToIndex(index - 1);
+		let prevNode = currentNode;
+		currentNode = currentNode.next;
+		prevNode.next = newNode;
+		newNode.next = currentNode;
+		this.length++;
+	}
+	remove(index) {
+		if (index >= this.length) {
+			return console.log("Invalid index!");
+		}
+		let prevNode = this.traverseToIndex(index - 1);
+		const targetNode = prevNode.next;
+		prevNode.next = targetNode.next;
+		this.length--;
+	}
+	traverseToIndex(index) {
+		let currentNode = this.head;
+		for (let i = 0; i < index; i++) {
+			currentNode = currentNode.next;
+		}
+		return currentNode;
+	}	
 	printList() {
 		const array = [];
 		let currentNode = this.head;
@@ -33,39 +62,6 @@ class LinkedList {
 			currentNode = currentNode.next;
 		}
 		console.log(array);
-		return array;
-	}
-	insert(index, value) {
-		//Code here
-        if (index >= this.length) {
-            return this.append(value);
-        }
-        const newNode = new Node(value);
-        let currentNode = this.traverseToIndex(index-1);
-        let prevNode = currentNode;
-        currentNode = currentNode.next;
-        prevNode.next = newNode;
-        newNode.next = currentNode;
-		this.length++;
-		// return this.printList();
-	}
-    traverseToIndex(index) {
-        let currentNode = this.head;
-        for (let i = 0; i < index; i++) {
-            currentNode = currentNode.next;
-        }
-        return currentNode;
-    }
-	remove(index) {
-		if (index >= this.length) {
-            return console.log("Invalid index!");
-        }
-		let prevNode = this.traverseToIndex(index-1);
-		const targetNode = prevNode.next;
-		prevNode.next = targetNode.next;
-		this.length--;
-		// return this.printList();
-
 	}
 }
 
