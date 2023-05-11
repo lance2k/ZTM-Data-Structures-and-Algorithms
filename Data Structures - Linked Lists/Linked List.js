@@ -47,6 +47,20 @@ class LinkedList {
 		prevNode.next = targetNode.next;
 		this.length--;
 	}
+	reverse(index) {
+		if (this.length < 2) {
+			return this;
+		}
+		let prevNode = null;
+		this.tail = this.head;
+		while (this.head != null) {
+			var temp = this.head;
+			this.head = this.head.next;
+			temp.next = prevNode;
+			prevNode = temp;
+		}
+		this.head = temp;
+	}
 	traverseToIndex(index) {
 		let currentNode = this.head;
 		for (let i = 0; i < index; i++) {
@@ -74,5 +88,7 @@ myLinkedList.insert(20, 80);
 myLinkedList.printList();
 myLinkedList.remove(2);
 myLinkedList.remove(20);
+myLinkedList.printList();
+myLinkedList.reverse();
 myLinkedList.printList();
 // console.log(myLinkedList);
