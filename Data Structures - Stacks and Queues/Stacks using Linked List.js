@@ -43,13 +43,7 @@ class Stack {
 		this.length--;
 		return this;
 	}
-	traverseBeforeTop() {
-		let currentNode = this.top;
-		while (currentNode.next.next != null) {
-			currentNode = currentNode.next;
-		}
-		return currentNode;
-	}
+
 	printList() {
 		const array = [];
 		let currentNode = this.top;
