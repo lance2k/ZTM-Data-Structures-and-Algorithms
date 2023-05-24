@@ -1,4 +1,4 @@
-let numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
 function bubbleSort(array) {
 	const length = array.length;
@@ -23,5 +23,5 @@ function bubbleSort(array) {
 	return array;
 }
 
-numbers = bubbleSort(numbers);
+bubbleSort(numbers);
 console.log(numbers);

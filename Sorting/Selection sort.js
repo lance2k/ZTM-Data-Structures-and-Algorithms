@@ -1,4 +1,4 @@
-let numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
 function selectionSort(array) {
 	const length = array.length;
@@ -23,5 +23,5 @@ function selectionSort(array) {
 	return array;
 }
 
-numbers = selectionSort(numbers);
+selectionSort(numbers);
 console.log(numbers);
